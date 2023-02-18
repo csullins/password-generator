@@ -6,7 +6,7 @@ function confirmPWLen (pwlength) {
  // Prompts the user whether to include lowercase and log response
 function confirmLower (includesLower) { 
   if (includesLower)
-  console.log("User has decided to include lower");
+  console.log("User has decided to include lowercase letters.");
   else
   console.log("User has opted not to include lowercase letters.");
 }
@@ -43,7 +43,11 @@ function writePassword() {
 }
 
 function generatePassword() {
-  let pwlength = prompt('Enter password length (between 8 and 128 characters):');
+  // let pwlength = prompt('Enter password length (between 8 and 128 characters):');
+  let pwlength = 0;
+  while (pwlength < 8 || pwlength > 128 || isNaN(pwlength)) {
+    pwlength = prompt("Invalid input. Please enter a number between 8 and 128 for the password length:");
+  }
   let includesLower= confirm('Would you like to include lowercase letters?');
   let includesUpper = confirm('Would you like to include uppercase letters?');
   let includesNum = confirm('Include numbers?');

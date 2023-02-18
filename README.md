@@ -1,21 +1,38 @@
-GIVEN I need a new, secure password
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
+# Password Generator Application
+This webpage presents an app that generates a random password based on a user's selected criteria.
 
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
+## To Use this Application
 
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters
+In your web browser, go to: https://csullins.github.io/password-generator/
 
-WHEN asked for character types to include in the password
-THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
+Click on the "Generate Password" button.
 
-WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
+Enter your desired password length and click 'OK'
 
-WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria
+When prompted if you would like to include lowercase letters, click 'OK' if so, or 'Cancel' if you do not.
 
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
+When prompted if you would like to include uppercase letters, click 'OK' if so, or 'Cancel' if you do not.
+
+When prompted if you would like to include numbers, click 'OK' if so, or 'Cancel' if you do not.
+
+When prompted if you would like to include special characters, click 'OK' if so, or 'Cancel' if you do not.
+
+Your password will then be displayed on the screen with your chosen parameters and desired length.
+
+## Features
+Allows user to select password length between 8 and 128 characters.
+Allows user to include lowercase letters, uppercase letters, numbers, and special characters in the password.
+Validates user input to ensure that the user enter some value for password length, and that the value is within the valid range.
+The user's choices are logged to the console to ensure the specified requirements are being met.
+Generates a random password based on user input.
+
+## Technologies Used
+HTML
+CSS
+JavaScript
+
+## Mock-Up
+
+The following image shows my web application's appearance and functionality:
+
+![Password Generator mock-up.] (./Assets/my-pw-gen.png)
