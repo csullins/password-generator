@@ -1,42 +1,32 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
-let pwlength = prompt('Enter password length (between 8 and 128 characters):');
+function confirmPWLen (pwlength) {
   console.log("User has decided on a  " + pwlength + "-character password.");
-
-  // Prompt the user whether to include lowercase and log response
-let includesLower= confirm('Would you like to include lowercase letters?');
-confirmLower();
-
-function confirmLower () { 
+}
+ // Prompts the user whether to include lowercase and log response
+function confirmLower (includesLower) { 
   if (includesLower)
   console.log("User has decided to include lower");
   else
   console.log("User has opted not to include lowercase letters.");
 }
-// Prompt the user whether to include uppercase
-let includesUpper = confirm('Would you like to include uppercase letters?');
-confirmUpper();
-function confirmUpper () { 
+// Prompts the user whether to include uppercase
+function confirmUpper (includesUpper) { 
   if (includesUpper)
   console.log("User has decided to include uppercase letters.");
   else
   console.log("User has opted not to include uppercase letters.");
 }
-// Prompt the user whether to include numbers
-let includesNum = confirm('Include numbers?');
-confirmNum();
-    function confirmNum () { 
+// Prompts the user whether to include numbers
+    function confirmNum (includesNum) { 
       if (includesNum)
       console.log("User has decided to include numbers.");
       else
       console.log("User has opted not to include numbers.");
   }
   
-// Prompt the user whether to include spec char
-let includesSpec = confirm('Include special characters?');
-confirmSpec();
-    function confirmSpec () { 
+// Prompts the user whether to include spec char
+    function confirmSpec (includesSpec) { 
       if (includesSpec)
       console.log("User has decided to include special characters.");
       else
@@ -53,6 +43,12 @@ function writePassword() {
 }
 
 function generatePassword() {
+  let pwlength = prompt('Enter password length (between 8 and 128 characters):');
+  let includesLower= confirm('Would you like to include lowercase letters?');
+  let includesUpper = confirm('Would you like to include uppercase letters?');
+  let includesNum = confirm('Include numbers?');
+  let includesSpec = confirm('Include special characters?');
+ 
   const lowerChars = 'abcdefghijklmnopqrstuvwxyz';
   const upperChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   const numChars = '0123456789';
@@ -70,8 +66,14 @@ for (let i = 0; i < pwlength; i++) {
   const randomChar = selectedChars[Math.floor(Math.random() * selectedChars.length)];
   pwString += randomChar;
 }
-return pwString;
 
+confirmPWLen (pwlength)
+confirmLower (includesLower);
+confirmUpper(includesUpper);
+confirmNum(includesNum);
+confirmSpec(includesSpec);
+
+return pwString;
 }
 
 // Add event listener to generate button
