@@ -35,4 +35,4 @@ JavaScript
 
 The following image shows my web application's appearance and functionality:
 
-![Password Generator mock-up.] (./Assets/my-pw-gen.png)
+![Password Generator mock-up.](./Assets/my-pw-gen.png)
